@@ -2,8 +2,11 @@ const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
 const {engine} = require('express-handlebars')
+const sass = require('node-sass');
 const app = express()
-const port = 3000
+const port = 3005
+
+app.use(express.static(path.join(__dirname,'public')))
 
 //HTTP logger
 app.use(morgan('combined'))
